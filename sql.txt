@@ -1,0 +1,14 @@
+"select list.list_id,list.list_name, relation.song_id, song.song_name,song.artist_id, song.artist_name \
+                              from t_radio_list_songs as relation, t_radio_list as list ,t_song as song \
+                              where list.state=1 and relation.list_id=list.list_id and relation.song_id=song.song_id order by list.list_id,relation.rate desc ")
+
+
+
+select al.list_id,al.list_name, al.artist_id, so.artist_name, so.song_id, so.song_name,al.tag_xiaomi from t_list as al, t_song as so \
+                                        where  al.list_type ='album' and al.list_name = '%s'  and al.list_id = so.album_id
+
+
+select al.list_id,al.list_name, al.artist_id, so.artist_name, so.song_id, so.song_name,al.tag_xiaomi from t_list as al, t_song as so where al.list_type ='album' and al.list_name = 'My World'  and al.list_id = so.album_id
+
+
+
